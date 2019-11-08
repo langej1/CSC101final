@@ -1,2 +1,2 @@
 # CSCfinal
-Repository for code for CSC final
+This is my code for my CSC101 final project.
