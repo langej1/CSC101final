@@ -71,9 +71,12 @@ def text_adventures():
     if west_move1 == "1.":
       print("You have become bankrupt, and drunk. Due to your lack of funds, you became angry and got arrested. Game over.")
       exit()
+    if west_move1 == "2.":
+      west_move1. = input("You saw a shark in the water. What do you do? 1. Run, or 2. Try to make it a pet")
+      if west_move. == "1.":
+        print("Out of fear, you ran to your startin point")
+        text_adventures()
 
-
-    
 
 
 def ball_8():
@@ -108,4 +111,5 @@ def user_choice():
     ball_8()
 
 user_choice()
+
 
