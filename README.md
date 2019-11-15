@@ -1,8 +1,3 @@
-# CSCfinal
-This is my code for my CSC101 final project.
-
-I will be adding descriptions from here, and updating code.
-
 import sys
 import random
 
@@ -38,7 +33,7 @@ def tictactoe():
 
 def text_adventures():
   
-  direction = input("Which direction would you like to go? East, West, North or South \n")
+  direction = input("Which direction would you like to go? East, West, North or South \n") 
   #coding for north grid
   if direction == "North":
     print("You have decided to go to the Northern Slopes")
@@ -47,35 +42,44 @@ def text_adventures():
       print("You entered the cave and encountered a", monsters[1] , "and was stabbed.")
       print("You have died")
       exit()
-    elif north_move1 == "No":
+    elif north_move1 == "No": #not enter cave. Leave North.
       print("The path to the West and East is blocked. Returning to the start point.")
       text_adventures()
 #coding for South grid
-  if direction == "South":
+  elif direction == "South": #go South
     print("You have decided to go to the Southern Shores")
     south_move1 = input("You have not encountered any monsters. Would you like to 1. Explore, or 2. leave the area \n")
-    if south_move1 == "1.":
+    if south_move1 == "1.": #exploring south
       castle_choice = input("Congrats! You found a castle on the water with a princess! Would you like to stay? Yes or No?")
-      if castle_choice == "Yes":
+      if castle_choice == "Yes": #stay at caslte
         print("Congrats. You have fulfilled your destiny.")
         exit()
-      else:
+      else: #leave castle
         print("The path to the West and East is overrun by monsters. Returning to the start point.")
-    else:
+    else: #leave south
       print("The path to the West and East is overrun by monsters. Returning to the start point.")
       text_adventures()
   #code for west grid
-  if direction == "West":
+  elif direction == "West": #travel west
     print("You have decided to go to the Western Waters.")
     west_move1 = input("You have encountered a village. Would you like to 1. Relax, and drink, 2. Go swimming in the ocean, or 3. Leave? \n")
-    if west_move1 == "1.":
+    if west_move1 == "1.": #drink
       print("You have become bankrupt, and drunk. Due to your lack of funds, you became angry and got arrested. Game over.")
       exit()
-    if west_move1 == "2.":
+    elif west_move1 == "2.": #Choose to swim in ocean
       west_move1. = input("You saw a shark in the water. What do you do? 1. Run, or 2. Try to make it a pet")
-      if west_move. == "1.":
+      if west_move. == "1.": #run away
         print("Out of fear, you ran to your startin point")
         text_adventures()
+      elif west_move. == "2.": #domesticate shark
+        print("You have been eaten by a shark. Game over.")
+        exit()
+    elif west_move1 == "3.": #leave west
+      print("returning to start point.")
+      text_adventures()
+  elif direction == "East":
+    print("You have decided to go to the East Woods") 
+
 
 
 
