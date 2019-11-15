@@ -15,7 +15,7 @@ print("Hello," , user_name)
 
 
 
-user_age = int(input("Please verify your age. How old are you?"))
+user_age = int(input("Please verify your age. How old are you? \n")) #used to verify the users age
 if user_age >= 25:
   print("Welcome to the simulation.")
 
@@ -31,9 +31,24 @@ def hangman():
 def tictactoe():
   print("hi")
 
-def text_adventures():
-  
-  direction = input("Which direction would you like to go? East, West, North or South \n") 
+def text_adventures(): #this is the code for the text adventure game.
+  """
+
+  args:
+  North_direction
+  south_direction
+  west_direction
+  east_direction
+
+  returns:
+  - They all return which direction they chose, and offer different options
+  north: Go in a cave or not?
+  south:Explore/leave, stay in castle/leave
+  west:party, swim, leave
+  east: Get a job/leave
+
+  """
+  direction = input("Which direction would you like to go? East, West, North or South \n")  #where the user wants to go.
   #coding for north grid
   if direction == "North":
     print("You have decided to go to the Northern Slopes")
@@ -50,8 +65,8 @@ def text_adventures():
     print("You have decided to go to the Southern Shores")
     south_move1 = input("You have not encountered any monsters. Would you like to 1. Explore, or 2. leave the area \n")
     if south_move1 == "1.": #exploring south
-      castle_choice = input("Congrats! You found a castle on the water with a princess! Would you like to stay? Yes or No?")
-      if castle_choice == "Yes": #stay at caslte
+      castle_choice = input("Congrats! You found a castle on the water with a princess! Would you like to stay? Yes or No? \n")
+      if castle_choice == "Yes": #stay at castle
         print("Congrats. You have fulfilled your destiny.")
         exit()
       else: #leave castle
@@ -67,24 +82,47 @@ def text_adventures():
       print("You have become bankrupt, and drunk. Due to your lack of funds, you became angry and got arrested. Game over.")
       exit()
     elif west_move1 == "2.": #Choose to swim in ocean
-      west_move1. = input("You saw a shark in the water. What do you do? 1. Run, or 2. Try to make it a pet")
-      if west_move. == "1.": #run away
-        print("Out of fear, you ran to your startin point")
+      print("You saw a shark in the water.")
+      west_move1_1 = input("What do you do? 1. Run, or 2. Try to make it a pet \n")
+      if west_move1_1 == "1.": #run away
+        print("Out of fear, you ran to your starting point")
         text_adventures()
-      elif west_move. == "2.": #domesticate shark
+      elif west_move1_1 == "2.": #domesticate shark
         print("You have been eaten by a shark. Game over.")
         exit()
     elif west_move1 == "3.": #leave west
       print("returning to start point.")
       text_adventures()
+  #Eastern grid coding
   elif direction == "East":
-    print("You have decided to go to the East Woods") 
+    print("You have decided to go to the East Woods")
+    east_move1 = ("You have been requested to work in a coal mine for $30 per hour for one year. Do you join? Yes or No? \n")
+    if east_move1 == "Yes":
+      east_move2 = input("You have successfully earned $60,000. Do you continue working? Yes or no? \n")
+      if east_move2 == "Yes":
+        print("You died in a mining accident. Game over.")
+        exit()
+      elif east_move2 == "No":
+        print("Returning to start point")
+        text_adventures()
+    elif east_move1 == "No":
+      print("Returning to start point.")
+      text_adventures()
 
 
 
 
 def ball_8():
-  user_inputs = ["Will I win the lottery? \n"]
+  """
+  args:
+  user_inputs: possible questions for the simulation to answer
+  ball_response: possible response from the magic 8 ball.
+
+  returns:
+  
+  """
+  user_inputs = ["Will I win the lottery? \n", "Will I pass this class? \n" , "Will I die young? \n" , "Will I die alone \n" , "Should I have dropped this class? \n" , "Will I fail this project? \n" , "Is getting hit by a car worth the free tuition? \n"]
+  ball_response =["Perhaps" , "No", "Yes", "Uncertain", "No one cares", "Without a doubt", "Most likely", "Probably not", "Don't count on it"]
 
 
 
