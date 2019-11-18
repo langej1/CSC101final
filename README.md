@@ -25,11 +25,16 @@ while user_age < 25:
   
 print("\n")
 #defines all the games/activities
+
+"""
 def hangman():
-  print("hangman")
+  wordslist = "wordslist.txt"
+  def load_words():
+
 
 def tictactoe():
   print("hi")
+"""
 
 def text_adventures(): #this is the code for the text adventure game.
   """
@@ -115,14 +120,24 @@ def text_adventures(): #this is the code for the text adventure game.
 def ball_8():
   """
   args:
-  user_inputs: possible questions for the simulation to answer
   ball_response: possible response from the magic 8 ball.
 
   returns:
+  returns a random response much like a magic 8-ball
   
   """
-  user_inputs = ["Will I win the lottery? \n", "Will I pass this class? \n" , "Will I die young? \n" , "Will I die alone \n" , "Should I have dropped this class? \n" , "Will I fail this project? \n" , "Is getting hit by a car worth the free tuition? \n"]
-  ball_response =["Perhaps" , "No", "Yes", "Uncertain", "No one cares", "Without a doubt", "Most likely", "Probably not", "Don't count on it"]
+  #list of responses the computer can give
+  ball_response =["Perhaps" , "No", "Yes", "Uncertain", "No one cares", "Without a doubt", "Most likely", "Probably not", "Don't count on it"] 
+  #promps user to ask a question
+  user_question = input("What questions do you have? \n")
+  #response from computer
+  print(ball_response[random.randint(0, len(ball_response)-1)])
+  #option to ask another question
+  redo_question = input("Do you have another question? Yes or No? \n")
+  if redo_question == "Yes":
+    ball_8()
+  else:
+    exit()
 
 
 
@@ -153,5 +168,3 @@ def user_choice():
     ball_8()
 
 user_choice()
-
-
