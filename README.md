@@ -7,7 +7,7 @@ To exit any game while in the middle of playing, press Ctrl + C
 
 """
 
-print("Welcome to the Super, Mega, Awesome Simulation")
+print("Welcome to the Diverse, Time Killing Module")
 
 user_name = input("What is your name:")
 
@@ -101,7 +101,7 @@ def text_adventures(): #this is the code for the text adventure game.
   #Eastern grid coding
   elif direction == "East":
     print("You have decided to go to the East Woods")
-    east_move1 = ("You have been requested to work in a coal mine for $30 per hour for one year. Do you join? Yes or No? \n")
+    east_move1 = input("You have been requested to work in a coal mine for $30 per hour for one year. Do you join? Yes or No? \n")
     if east_move1 == "Yes":
       east_move2 = input("You have successfully earned $60,000. Do you continue working? Yes or no? \n")
       if east_move2 == "Yes":
@@ -144,7 +144,7 @@ def ball_8():
 def user_choice():
   print("To exit any game, press Ctrl + C")
   print("Which game would you like to play?")
-  games = ['1. Hangman' , '2. Tic-Tac Toe' , '3. Text-Based Adventure', '4. Magic-8Ball']
+  games = [ '1. Text-Based Adventure', '2. Magic-8Ball']
   
   #prints out game options
   for game in games:
@@ -153,18 +153,21 @@ def user_choice():
   print("\n")
   
   #gives the user a choice in the game
-  game_choice = input("Which game would you like to play? 1., 2., 3., or 4.? \n")
+  game_choice = input("Which game would you like to play? 1. or 2.? \n")
   # calls up the game choice the user chooses
+  
+  
   if game_choice == "1.":
-    hangman()
-  
-  elif game_choice == "2.":
-    tictactoe()
-  
-  elif game_choice == "3.":
     text_adventures()
   
-  elif game_choice == "4.":
+  elif game_choice == "2.":
     ball_8()
-
+  
+  """
+  elif game_choice == "1.":
+      hangman()
+    
+    elif game_choice == "2.":
+      tictactoe()
+"""
 user_choice()
