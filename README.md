@@ -1,4 +1,3 @@
-import sys
 import random
 
 """
@@ -145,6 +144,7 @@ def bad_counseling():
     "dead" : ["That sucks" , "Just move on." , "Don't be a baby" , "Sounds like a personal problem."],
 
     "divorce" : ["Oh well" , "There's other fish in the sea." , "Don't be a wuss" , "You're gonna die alone anyways."],
+    "left" : ["Oh well" , "There's other fish in the sea." , "Don't be a wuss" , "You're gonna die alone anyways."],
 
     "depressed" : ["Just be happy" , "You and every teen out there." , "Yeah, no one cares." , "Not worth my time, next"],
     "depression":["Just be happy" , "You and every teen out there." , "Yeah, no one cares." , "Not worth my time, next"],
@@ -170,7 +170,9 @@ def bad_counseling():
 
     "sick" : ["Get some meds" , "Pull the plug" , "Buy the coffin now"]
   }
+  #in case they ask a question I didn't think of.
   default_response = ("I'm not sure I can help you with that.")
+  #gives a random response from the list of responses
   def random_response(words):
     responses = []
     for word in words:
@@ -379,20 +381,26 @@ def user_choice():
   # calls up the game choice the user chooses
   
   #launches text adventure game
-  if game_choice == "1.":
+  if game_choice == "1." or game_choice == "1":
     text_adventures()
 
   #launches 8-ball predition game
-  elif game_choice == "2.":
+  elif game_choice == "2." or game_choice == "2":
     ball_8()
 
   #launches the counseling helper
-  elif game_choice == "3.":
+  elif game_choice == "3." or game_choice == "3":
     bad_counseling()
 
 #launches the hangman game
-  elif game_choice == "4.":
+  elif game_choice == "4." or game_choice == "4":
       hangman()
     
   
 user_choice()
+
+
+"""
+Works Cited:
+Hangman: https://codereview.stackexchange.com/questions/95997/simple-game-of-hangman
+"""
