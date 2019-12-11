@@ -49,7 +49,7 @@ def text_adventures(): #this is the code for the text adventure game.
     print("You have decided to go to the Northern Slopes")
     north_move1 = input("You have encountered a cave. Would you like to enter? Yes or No? \n").lower()
     if north_move1 == "yes": #choose to enter cave
-      print("You entered the cave and encountered a", monsters[1] , "and was stabbed.")
+      print("You entered the cave and encountered a goblin and was stabbed.")
       print("You have died")
       exit()
     elif north_move1 == "no": #not enter cave. Leave North.
@@ -111,6 +111,8 @@ def ball_8():
   """
   args:
   ball_response: possible response from the magic 8 ball.
+  user_question: What the user asks
+  redo_question: Gives user option to ask another question
 
   returns:
   returns a random response much like a magic 8-ball
@@ -135,8 +137,9 @@ def bad_counseling():
   1. questions_dictionary: list of possible trigger words for certain problems and their different options for a response
   2. default_response: Response for anything not includes in the dictionary.
   3. random_response: generates a random response response from the dictionary
-
-
+  4. user_text: What the user says
+  5. Response: Randomly generated response from the dictionary
+  6.next_response:Gives option for another question
 
   """
   print("What is your issue?")
@@ -171,16 +174,16 @@ def bad_counseling():
     "sick" : ["Get some meds" , "Pull the plug" , "Buy the coffin now"]
   }
   #in case they ask a question I didn't think of.
-  default_response = ("I'm not sure I can help you with that.")
+  default_response = ["I'm not sure I can help you with that."]
   #gives a random response from the list of responses
   def random_response(words):
     responses = []
     for word in words:
-        if word in questions_dictionary:
-            responses += questions_dictionary[word]
-    
+      if word in questions_dictionary:
+        responses += questions_dictionary[word]
+
     if len(responses) == 0:
-        responses = default_response
+      responses = default_response
     
     return random.choice(responses)
 
@@ -193,7 +196,7 @@ def bad_counseling():
   next_response = input("Do you have another issue, Y/N?\n").upper()
   if next_response == "Y":
     bad_counseling()
-    print("Counselor: " , new_response)
+    print("Counselor: " , response)
   if next_response =="N":
     exit()
 
@@ -205,6 +208,8 @@ def hangman():
   args:
   words - list of words to be used for the game. Returns word
   max_guesses- determines max guesses based on word length
+  word_since_guess: How many spaces there are for the word, after last guess
+  guess: user guice for a letter
 
 
   """
